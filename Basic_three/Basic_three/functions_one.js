@@ -1,19 +1,19 @@
 //function means aapne poore code (jitni bhi lines ka ho) ko ek package me band kar dete hain and hum jitin baar chaahen utni baar uski copies bhi kahin bhi le ja sakte hain.
-console.log("hi");
-console.log("hello");
-console.log("hyy");
-console.log("hee");
-console.log("Happy");
+// console.log("hi");
+// console.log("hello");
+// console.log("hyy");
+// console.log("hee");
+// console.log("Happy");
 
 
-function sayMyName(){
-console.log("hi");
-console.log("hello");
-console.log("hyy");
-console.log("hee");
-console.log("Happy");
+// function sayMyName(){
+// console.log("hi");
+// console.log("hello");
+// console.log("hyy");
+// console.log("hee");
+// console.log("Happy");
 
-}
+// }
 //it is reference of function definition//sayMyName
 //() it is excecution of function//
 //sayMyName()
@@ -44,7 +44,7 @@ function loginUserMessage(username = "Jennifer"){
     //if(username === undefined)//this is other way of writing.
     if(!username){
         console.log("Please enter a username");
-return// not execute other below code
+//return// not execute other below code
     }
     return `${username} just logged in`
 
@@ -68,10 +68,18 @@ const user = {
     username: "Priyanka",
     prices:200
 }
-function handleObject (anyobject){
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+//function handleObject (anyobject){
+    //console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+//}
+const student = {
+    studentname:"Shriram Tiwari",
+     studentclass:"BtechCS"
+
 }
-handleObject(user);//if we write code in professional way then first check type of that object.
+function handleObject (anyobject){
+    console.log(`student is${anyobject.studentname} and class is ${anyobject.studentclass}`);
+}
+handleObject(student);//if we write code in professional way then first check type of that object.
 
 handleObject({
     username:"sam",
@@ -84,4 +92,12 @@ function returnSecondValue(getArray){//function accept array and give secondvalu
 }
 console.log(returnSecondValue(myNewArray));
 console.log(returnSecondValue(myNewArray));
+
+//how to create a function 
+
+//function
+const myoldArray = [200,400,600,800]
+function returnThirdValue(getmyArray){
+return getmyArray[3]}
+console.log(returnThirdValue(myoldArray));
 

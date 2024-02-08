@@ -58,4 +58,40 @@ userTwo.upi = "user@xyl"
 console.log(userone);
 console.log(userTwo);
 
-
+const name = "Priyanka"
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+  }
+  greet(name);
+  
+const classes = "Bcom II Year"
+function greet(classes){
+    console.log(`Hello , ${classes}!`);
+}
+ 
+  
+    
+  
+ function shriram(){
+    const  x = 5
+    result = x*x*x
+    console.log(result);
+ }
+ 
+// Syntax:
+const functionName = (parameters) => {
+    // function body
+  };
+  (function(x, y) {
+    let result = x + y;
+    console.log(result);
+  })(10, 20);
+  // Outputs: 30
+(function(a,b){
+    const result = a/b;
+   // console.log(result);
+//})(40,50)  
+(function (y){
+   let return = y*y;
+   console.log(return);
+})(5)

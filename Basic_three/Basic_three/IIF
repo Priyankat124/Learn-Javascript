@@ -1,0 +1,18 @@
+
+
+function one() {
+  const  username = "sam"
+    function two (){
+       const name = "jerry"
+        console.log(username);
+    }
+    two()
+  function three(){
+    const anothername = "second"
+    console.log(anothername);
+  }
+  three()
+  console.log(username);
+}
+
+one()

@@ -39,13 +39,22 @@ JsUser.name = "Arjun Tiwari"
 console.log(JsUser);
  
 
-JsUser.greeting = function(){
+//JsUser.greeting = function(){
     console.log("Hello JS User");
-}
-JsUser.greetingTwo = function(){
+//}
+//JsUser.greetingTwo = function(){
     console.log(`Hello JS User,${this.name}`);
+//}
+
+//console.log(JsUser.greeting());
+//console.log(JsUser.greetingTwo());
+//when refer to values always use in objects that is [] and dot but maximum square bracket.
+function Student(name, age) {
+    this.name = name;
+    this.age = age;
 }
 
-console.log(JsUser.greeting());
-console.log(JsUser.greetingTwo());
-//when refer to values always use in objects that is [] and dot but maximum square bracket.
+let student1 = new Student("John Doe", 20);
+let student2 = new Student("Jane Doe", 22);
+console.log(student1);
+console.log(student2);
