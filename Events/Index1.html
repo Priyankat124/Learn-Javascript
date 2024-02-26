@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events
+    </title>
+    <style>
+        img{
+            height: 95%;
+            width: 95%;
+        }
+        body{
+            background-color: #414141;
+            color: palevioletred;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Amazing images</h1>
+   <div>
+  <ul  class="images">
+    <li ><img class="first" src="Thankyouu.webp" alt=""></li>
+    <li><img  class="third"  class="sescond" src="Thankyouu.webp" alt=""></li>
+    <li><img  class="fourth" src="Thankyouu.webp"   ></li>
+    <li><img class="fifth" src="Thankyouu.webp" alt=""></li>
+    
+    <li class="sixth"><img src="Thankyouu.webp" alt=""></li>
+  
+<li class="link"><a href="https://edabit.com/challenges/javascript">Link</a></li>
+
+</ul>
+  
+
+</div> 
+<!-- javascript me jo bhi event hain sequentially hi run hote hain kuchh exceptipns bhi hote hain -->
+    
+</body>
+
+ <script>
+ /*  document.querySelector('.images').addEventListener('click',function (e) {
+   alert('we are talking about images')
+   //agar aap bubling nhi chahte hain aap chaahte hain ki inner ka inner hi rah jaaye wo koi flow naa kare to dekho ||e|| ka role
+        console.log(e);  
+       
+    },false)
+    document.getElementsByClassName('fifth')[0].addEventListener('click',function (e) {
+  alert ('this is the image of thankyou')
+ 
+        console.log(e); 
+  e.stopPropagation();
+    },false)
+    document.getElementsByClassName('link')[0].addEventListener('click',(e) => (e.preventDefault(),e.stopPropagation(),console.log('google clicked')
+  ),false ) 
+
+
+   */
+//attachEvent()
+  //jQuery -- on
+//learn more about e that is objects.
+//type,timestamp , defaultPrevented,target ,toElement
+//srcElement , currentTarget,
+//clientX,clientY,screenX,screenY,
+//altkey,ctrlkey,shiftkey ,keyCode
+
+//event propagation i.e true and false it works like bublling up from deep to high and from zero t hundred inside to outside
+
+//false mean bubling up mode in eventlistener which is default
+//true means capturing mode in eventlistener which is not default and it works from top to bottom.
+document.querySelector('.images').addEventListener('click', function(e){
+    console.log(e.target.tagName);
+    let removeimg = e.target.parentNode
+if(e.target.tagName === 'IMG'){
+    removeimg.parentNode.removeChild(removeimg);
+    console.log(e.target.id);
+}
+/* removeimg.remove(); */
+
+},false)
+
+
+
+</script>
+</html>

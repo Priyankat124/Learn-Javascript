@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop
+    ">Stop</button>
+    <script>
+
+        //settimeout done one time your work after that not allowed for more
+        // set interval happens what time you give then function execution happensn again and again
+        setTimeout(function(){
+            console.log("priyanka Tiwari");
+        },5000)
+    const  saypriyanka  = function () {
+        console.log('priyanka');
+        
+    }  
+    const changetext = function(){
+        document.querySelector('h1').innerHTML = "Best JS Series"
+
+
+    }
+
+  const changeme =  setTimeout(changetext,6000);
+  document.querySelector('button').addEventListener('click',function(){
+    clearTimeout(changeme);
+
+    console.log('STOPPED');
+  })
+//Clear time execution happens when we want to stop the execution of set time before that time.
+
+    
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hai aur Code about DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+  <ul class = "language">
+<li>
+    Javascript
+</li>
+  </ul>  
+</body>
+<script>
+  function addlanguage(langname) {
+const li = document.createElement('li');
+li.innerHTML = `$(langname)`
+document.querySelector('.language').appendChild(li)
+
+    
+  }
+  addlanguage("python")
+  addlanguage('HTML AND CSS')
+  function  addanotherway(langName){
+   const li =  document.createElement('li');
+   li.appendChild(document.createTextNode(langName));
+document.querySelector('.language').appendChild(li)
+  }
+  addanotherway("Power Bi");
+  addanotherway("Excel");
+//Edit
+const secondlang = document.querySelector("li:nth-child(2)")
+const newli = document.createElement('li')
+newli.textContent = "Mojo"
+secondlang.replaceWith(newli);
+const thirdlang = document.querySelector('li:nth-child(3)');
+thirdlang.textContent = "React JS"
+//edit
+const firstlang = document.querySelector("li:nt-child(1)");
+firstlang.outerHTML = '<li>Typescript</li>'
+//remove
+const lastlang = document.querySelector('li:last-child');
+ lastlang.remove();
+
+</script>
+
+</style>
+</html>
