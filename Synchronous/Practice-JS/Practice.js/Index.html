@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <input id="inputarea" type="text" placeholder="Enter text">
+        </div>
+        <button>Start</button>
+    </div>
+    <script>
+        const inputarea = document.querySelector('#inputarea');
+        const button = document.querySelector('button');
+        const speech = window.speechSynthesis;
+
+        function textToSpeech() {
+            const text = inputarea.value;
+            if (text !== '') {
+                const utterance = new SpeechSynthesisUtterance(text);
+                speech.speak(utterance);
+            } else {
+                alert("Please enter some text.");
+            }
+        }
+
+        button.addEventListener('click', textToSpeech);
+    </script>
+</body>
+</html>

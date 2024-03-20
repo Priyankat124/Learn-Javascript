@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Api requests</title>
+    <style>
+        body{
+            background-color: rgb(46, 44, 44);
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(10, 87, 115);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="text"></div>
+        </div>
+    </div>
+    <button class="request"></button>
+
+    
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open('Get',requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+          const data =JSON.parse(this.responseText)
+          console.log(data);//ye string ko JSON me convert karta hai.Agar ise Number me change karna hai to Number() ye hota hai
+         console.log(typeof data);
+
+     
+         
+          console.log(data.followers);
+          const imageadd = data.avatar_url;
+       
+      
+          
+      
+          console.log(data.avatar_url);
+          
+         
+    
+        }
+       
+
+    }
+
+
+
+
+
+
+ /* console.log(xhr.readyState); */
+    xhr.send();
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <div class="card">
+            <div class="title"></div>
+          <div class="price"></div>
+          <div class="description"></div>
+        </div>
+        
+    </main>
+    <script>
+       
+       
+       
+//axios -> npm 
+//axios.get(api).then(data => console.log(data))
+        let api ='https://fakestoreapi.com/products';
+        fetch(api) 
+        .then(res => res.json())
+        .then((data)=>hanleApi(data));
+         function hanleApi(data){
+           
+          data.forEach(product => {
+             //card create 
+             //title div add 
+             //price div
+             //description div add
+               let card = getCard(product);
+               document.body.appendChild(card);
+               
+
+
+          });
+         }
+          getCard = (product )=>{
+         
+             //append main
+             let card = document.createElement('div');
+             card.classList.add("card");
+          
+             let title = document.createElement('div');
+             title.classList.add("title");
+             title.innerHTML = `<p>${product.title}</p>`;
+      
+             card.appendChild(title);
+
+             let price = document.createElement('div');
+             price.innerHTML = `<h2>${product.price}</h2>`;
+             price.classList.add("price");
+             card.appendChild(price);
+            
+            
+             let desc = document.createElement('div');
+             desc.innerHTML = `<p>${product.description}</p>`;
+             desc.classList.add("description");
+             card.appendChild(desc);
+             //at last card ko append -> body
+
+           return card;
+             
+         }
+
+
+    </script>
+</body>
+</html>

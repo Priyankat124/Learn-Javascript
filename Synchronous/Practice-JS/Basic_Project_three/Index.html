@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to  Speech Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <header>Text to Speech Converter</header>
+<textarea name="" id="" cols="30" rows="10" placeholder="Enter text"></textarea>
+<button>
+    Convert to Speech
+</button>
+
+</div>
+<script>
+    const textarea = document.querySelector('textarea');
+    const button = document.querySelector('button');
+
+    const textToSpeech = () => {
+        const synth = window.speechSynthesis;
+        const text = textarea.value;
+       let isSpeaking = true; 
+        if (synth.speaking && text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            synth.speak(utterance);
+        }
+
+        if (text.length > 50) {
+            if (synth.speaking && isSpeaking){
+                button.innerText = 'Pause';
+                synth.resume();
+                isSpeaking = false;
+            } else {
+                button.innerText = 'Resume';
+                synth.pause();
+                isSpeaking = true;
+            }
+        } else {
+            isSpeaking = false;
+            button.innerText = 'Speaking';
+        
+    }
+
+        setInterval(() => {
+            if (!synth.speaking && !isSpeaking) {
+                isSpeaking = true;
+                button.innerText = 'Convert to Speech';
+            }
+        });
+    };
+   button.addEventListener('click', textToSpeech);
+   console.log(textToSpeech);
+</script>   
+</body>
+</html>

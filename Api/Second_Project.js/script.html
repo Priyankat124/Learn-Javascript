@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Project</title>
+</head>
+
+<body style="background-color: rgb(27, 22, 22); color: aliceblue;" >
+    <script>
+        const  RequestUrl =  "https://api.github.com/users/hiteshchoudhary";
+       const xhr = new XMLHttpRequest();
+       xhr.open('Get',RequestUrl);
+       xhr.send();
+
+       xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+       
+        if(xhr.readyState === 4){
+const data = JSON.parse(this.responseText);
+console.log(data);
+console.log(data.followers);
+const photo = data.avatar_url;
+const followers = data.followers;
+const newelement = document.createElement('div');
+
+newelement.id = "card";
+newelement.className = "card";
+newelement.style.width = "400px";
+newelement.style.height = "400px";
+const newimg = document.createElement('img');
+
+newelement.appendChild(newimg);
+newimg.id = "pic";
+newimg.style.width = '250px' ;
+newimg.style.height = '250px';
+newimg.style.borderRadius = '250px';
+newimg.style.marginLeft = '50px'
+newimg.src = photo;
+newimg.style.borderRadius = '250px';
+newelement.style.margin = "50px";
+
+
+
+
+const textfollowers = document.createElement('h3');
+textfollowers.innerHTML = `<h3 style = "margin-left:65px;">Followers : ${data.followers}`;
+newelement.appendChild(textfollowers);
+let button = document.createElement('button');
+button.id = "getcard";
+button.className = "getcard";
+button.style.height = '50px';
+button.style.width = '150px';
+button.innerHTML = `<h3>Get Card Info</h3>`
+newelement.appendChild(button);
+const listen = function(){
+    console.log(photo);
+    console.log(followers);
+}
+let changebackground = function(){
+ newelement.style.backgroundColor = "#364954";   
+    
+}
+button.style.marginLeft = "65px";
+button.addEventListener('click',listen);
+button.addEventListener('click',changebackground);
+
+
+
+
+
+
+
+
+document.body.appendChild(newelement);  } 
+
+       }
+
+const randomColor = function(){
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i<6;i++){
+        color += hex[Math.floor(Math.random()*16)];
+    }
+    return color;
+
+}
+  console.log(randomColor()); 
+ 
+const generatepassword = function(length){
+    const characters = '01234567ABCDEabcde';
+    let password = '';
+    for(let i = 0;i<length;i++){
+        password += characters[Math.floor(Math.random()*characters.length)];
+
+
+    }
+    return password;
+}
+console.log(generatepassword(9));
+    
+    </script>
+    
+</body>
+</html>

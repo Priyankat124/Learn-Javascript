@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        body{
+            background-color: rgb(31, 30, 30);
+            color: aliceblue;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    
+  
+    <script>
+  body = document.body;
+body.style.backgroundColor = "darkgrey";
+body.innerHTML = `<h1>THIS IS IDENTITY CARD`;
+
+let cards = document.createElement('div');
+cards.className = "Various Cards"
+ document.body.appendChild(cards);
+ 
+ 
+ let imageid = document.createElement('img');
+imageid.src ='pic1.jpg';
+imageid.id = "myimage";
+imageid.className = "imageclass";
+
+imageid.alt = "Description of image"
+
+console.log(imageid);
+imageid.height = 300;
+imageid.width = 300;
+
+cards.innerHTML = `<h2>Name : Dishit</br><h2>Year:1</h2><h2>Phone No. : 12345678909`;
+
+cards.style.color = "darkblue";
+cards.appendChild(imageid);
+
+
+let card2 = document.createElement('div');
+card2.id = "secondcard";
+cards.appendChild(card2);
+card2.innerHTML = `<h2>Shriram Tiwari</h2></br><h2>Age:21</h2></br><h2>Phone No. :9516559181</h2>`;
+let secondimg = document.createElement('img');
+secondimg.alt = "Shriram Tiwari img"
+secondimg.className = "my2img"
+secondimg.id = "my2img"
+secondimg.src = "pic2.jpg";
+
+secondimg.height = 300;
+secondimg.width = 300;
+
+card2.appendChild(secondimg);
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+   
+</script> 
+    
+</body>
+
+</html>

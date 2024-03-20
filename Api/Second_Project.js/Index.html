@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Project</title>
+    <style>
+        body{
+            background-color: rgb(32, 28, 28);
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+let webpage = document.createElement('div');
+webpage.className = "webpage";
+
+document.body.appendChild(webpage);
+
+webpage.style.backgroundColor = "#192841";
+
+webpage.style.color = "aliceblue"
+  let navbar = document.createElement('nav');
+  let newlist =  `<ul style = display:flex;
+ justifyContent:center;
+ alignItems:center;>
+  
+    <li style="padding:5px; list-style-type: none;">Home</li>
+
+    <li style = "padding:5px;list-style-type: none;"" >About</li>
+    <li style = "padding:5px;list-style-type: none;">Store</li>
+    <li style = "padding:5px;list-style-type: none;">Contact</li>
+    </ul>`;
+ navbar.innerHTML = newlist;
+
+    navbar.style.display = "flex";
+    navbar.style.justifyContent= "center";
+      navbar.style.alignItems = "center";
+      navbar.style.listStyleType = "none"
+      
+   
+
+console.log(navbar);
+webpage.appendChild(navbar);
+webpage.style.height = 100;
+webpage.style.width = 100;
+let mainbody = document.createElement('div');
+mainbody.className = "mainbody"
+mainbody.id = "mainbody";
+let addimg = document.createElement('img');
+addimg.src = "pic3.png";
+addimg.alt = "mysecondimg"
+addimg.height = 200;
+addimg.width = 200;
+mainbody.appendChild(addimg);
+let h3 = document.createElement('h3');
+h3.id = "heading";
+h3.className = "heading";
+h3.innerHTML = `<h1>Let's build some </br>Projects with</br>Alt_de_alma<h1>`
+h3.style.color = "aliceblue";
+mainbody.appendChild(h3)
+mainbody.style.display = "flex";
+mainbody.style.justifyContent = "space-around";;
+mainbody.style.alignItems = "center";
+
+
+
+
+
+webpage.appendChild(mainbody);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>
